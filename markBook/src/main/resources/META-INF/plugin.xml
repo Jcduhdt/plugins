@@ -1,11 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
+<!-- require-restart安装该插件是否需要重启-->
+<idea-plugin require-restart="false">
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>com.jcduhdt.sharp.markBook</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>MarkBook</name>
+
+    <version>1.0.1</version>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="jcduhdt@126.com" url="https://www.jcduhdt.cn">jcduhdt</vendor>
@@ -18,18 +21,22 @@
     <em>mark down document</em>
   ]]></description>
 
+    <change-notes>update logo</change-notes>
+
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <!-- 扩展栏，在右侧添加扩展-->
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.jcduhdt.sharp.markbook.window.NoteListWindowFactory" id="notewindow"
                     anchor="right" icon="/img/send.svg"/>
     </extensions>
+
     <actions>
-        <action id="PopupAction" class="com.jcduhdt.sharp.markbook.action.PopupAction" text="add markdown notes"
+        <action id="PopupAction" class="com.jcduhdt.sharp.markbook.action.PopupAction" text="Add Notes"
                 description="添加笔记">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
