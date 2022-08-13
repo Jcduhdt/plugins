@@ -13,7 +13,14 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description><![CDATA[这是一款根据特定格式定位代码块的插件<br><em>mark down document</em>]]></description>
+    <description><![CDATA[这是一款获取剪切板内容并定位代码块的插件<br>
+<em>目前仅针对特定格式</em><br/>
+<em>内容应类似[..jcduhdt.com/sharp/model/user_service.Register/login.go:57] </em><br/>
+<em>格式为：左中括号，文件路径（.Register为对应的函数名（可选）），代码行数，右中括号</em>
+]]></description>
+
+    <version>1.0.0</version>
+    <change-notes><![CDATA[支持特定go日志格式查询]]></change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -29,9 +36,11 @@
   Project-level listeners. For more information, see:
   https://plugins.jetbrains.com/docs/intellij/plugin-listeners.html#defining-project-level-listeners
   -->
-    <projectListeners>
-<!--        <listener/>-->
-    </projectListeners>
 
-
+    <actions>
+        <action id="clipBoard" class="com.jcduhdt.sharp.codeposition.action.CodePosition" text="code position"
+                description="listen clipboard content and position file &amp; row">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.jcduhdt.sharp"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -16,8 +16,6 @@ intellij {
     type.set("GO") // Target IDE Platform
 
     plugins.set(listOf(/* Plugin Dependencies */))
-    // 设置了localPath就不应设置version,type
-    localPath.set("/Users/iveszhang/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/221.5787.30/Goland.app/Contents")
 }
 
 tasks {
