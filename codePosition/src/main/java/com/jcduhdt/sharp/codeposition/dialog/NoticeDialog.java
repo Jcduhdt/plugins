@@ -25,7 +25,7 @@ public class NoticeDialog extends DialogWrapper {
         jta.setEditable(false);
         jta.setSize(500, 300);
 
-        JBScrollPane scrollPane = new JBScrollPane(jta,JBScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JBScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JBScrollPane scrollPane = new JBScrollPane(jta, JBScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JBScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         return scrollPane;
     }
@@ -35,7 +35,7 @@ public class NoticeDialog extends DialogWrapper {
 
         JPanel panel = new JPanel();
         JButton button = new JButton("ok");
-        button.setForeground(new Color(51,153,255));
+        button.setForeground(new Color(51, 153, 255));
         button.addActionListener(e -> {
             this.close(OK_EXIT_CODE);
         });

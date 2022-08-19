@@ -1,5 +1,8 @@
 package com.jcduhdt.sharp.codeposition.data;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Data {
     public String filePath;
     public String funcName;
@@ -22,5 +25,9 @@ public class Data {
                 ", fileName='" + fileName + '\'' +
                 ", row=" + row +
                 ", col=" + col;
+    }
+
+    public Data(String filePath) {
+        this.filePath = filePath;
     }
 }
